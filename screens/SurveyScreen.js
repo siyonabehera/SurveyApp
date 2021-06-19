@@ -229,46 +229,17 @@ export default class SurveyScreen extends Component {
     }
 
     onSurveyFinished(answers) {
-        /** 
-         *  By using the spread operator, array entries with no values, such as info questions, are removed.
-         *  This is also where a final cleanup of values, making them ready to insert into your DB or pass along
-         *  to the rest of your code, can be done.
-         * 
-         *  Answers are returned in an array, of the form 
-         *  [
-         *  {questionId: string, value: any},
-         *  {questionId: string, value: any},
-         *  ...
-         *  ]
-         *  Questions of type selection group are more flexible, the entirity of the 'options' object is returned
-         *  to you.
-         *  
-         *  As an example
-         *  { 
-         *      questionId: "favoritePet", 
-         *      value: { 
-         *          optionText: "Dogs",
-         *          value: "dog"
-         *      }
-         *  }
-         *  This flexibility makes SelectionGroup an incredibly powerful component on its own. If needed it is a 
-         *  separate NPM package, react-native-selection-group, which has additional features such as multi-selection.
-         */
+        
 
         const infoQuestionsRemoved = [...answers];
 
-        // Convert from an array to a proper object. This won't work if you have duplicate questionIds
         const answersAsObj = {};
         for (const elem of infoQuestionsRemoved) { answersAsObj[elem.questionId] = elem.value; }
 
         this.props.navigation.navigate('SurveyCompleted', { surveyAnswers: answersAsObj });
     }
 
-    /**
-     *  After each answer is submitted this function is called. Here you can take additional steps in response to the 
-     *  user's answers. From updating a 'correct answers' counter to exiting out of an onboarding flow if the user is 
-     *  is restricted (age, geo-fencing) from your app.
-     */
+    
     onAnswerSubmitted(answer) {
         this.setState({ answersSoFar: JSON.stringify(this.surveyRef.getAnswers(), 2) });
         switch (answer.questionId) {
