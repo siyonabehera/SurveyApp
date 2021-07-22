@@ -12,195 +12,247 @@ const survey = [
         questionText: 'Welcome to the survey app! Tap next to continue'
     },
     {
-        questionType: 'TextInput',
-        questionText: 'What is your favorite color?',
-        questionId: 'favoriteColor',
-        placeholderText: 'Tell me your favorite color!',
-    },
-    {
-        questionType: 'NumericInput',
-        questionText: 'Enter your favorite number here!',
-        questionId: 'favoriteNumber',
-        placeholderText: '42',
-    },
-    {
-        questionType: 'NumericInput',
-        questionText: 'How old are you? (Select a number)',
-        questionId: 'age',
-        defaultValue: '0'
+        questionType: 'SelectionGroup',
+        questionText:
+            'What is your biggest strength? ',
+        questionId: 'biggestStrength',
+        options: [
+            {
+                optionText: 'independent',
+                value: 'independent'
+            },
+            {
+                optionText: 'patient',
+                value: 'patient'
+            },
+            {
+                optionText: 'hard-working',
+                value: 'hard-working'
+            },
+            {
+                optionText: 'perseverance',
+                value: 'perseverance'
+            },
+        ]
     },
     {
         questionType: 'SelectionGroup',
         questionText:
-            'What is your favorite pet? ',
-        questionId: 'favoritePet',
+            'What is your biggest weakness?',
+        questionId: 'biggestWeakness',
         options: [
             {
-                optionText: 'Dogs',
-                value: 'dog'
+                optionText: 'put too much pressure on myself',
+                value: 'put too much pressure on myself'
             },
             {
-                optionText: 'Cats',
-                value: 'cat'
+                optionText: 'ALWAYS trying to please people',
+                value: 'ALWAYS trying to please people'
             },
             {
-                optionText: 'Ferrets',
-                value: 'ferret'
+                optionText: 'struggle with time management',
+                value: 'struggle with time management'
             },
             {
-                optionText: 'Hamsters',
-                value: 'hamster'
-            },
-            {
-                optionText: 'Bunnies',
-                value: 'bunny'
-            }
-        ]
-    },
-    {
-        questionType: 'MultipleSelectionGroup',
-        questionText:
-            'Select two or three of your favorite foods!',
-        questionId: 'favoriteFoods',
-        questionSettings: {
-            maxMultiSelect: 3,
-            minMultiSelect: 2,
-        },
-        options: [
-            {
-                optionText: 'French Fries',
-                value: 'french fries'
-            },
-            {
-                optionText: 'Chicken Nuggets',
-                value: 'chicken nuggets'
-            },
-            {
-                optionText: 'Burgers',
-                value: 'burgers'
-            },
-            {
-                optionText: 'Pizza',
-                value: 'pizza'
-            },
-            {
-                optionText: 'Ice cream',
-                value: 'ice cream'
-            },
-            {
-                optionText: 'Chips',
-                value: 'chips'
-            },
-            {
-                optionText: 'Chocolate',
-                value: 'chocolate'
-            },
-            {
-                optionText: 'Popcorn',
-                value: 'popcorn'
+                optionText: 'indecisive',
+                value: 'indecisive'
             },
         ]
     },
     {
-        questionType: 'MultipleSelectionGroup',
+        questionType: 'SelectionGroup',
         questionText:
-            'Select two things you do to relax. (This question will auto-advance after you select two choices)',
-        questionId: 'relax',
-        questionSettings: {
-            maxMultiSelect: 2,
-            minMultiSelect: 2,
-            autoAdvance: true,
-        },
+            'What type of friend are you?',
+        questionId: 'friendType',
         options: [
             {
-                optionText: 'Reading a good book',
-                value: 'reading'
+                optionText: 'Always thinking about others and putting them first.',
+                value: 'Always thinking about others and putting them first.'
             },
             {
-                optionText: 'Going on vacation',
-                value: 'vacations'
+                optionText: 'Gives great advice and has excellent intuition.',
+                value: 'Gives great advice and has excellent intuition.'
             },
             {
-                optionText: 'Eating meals with family',
-                value: 'meals'
+                optionText: 'Leads conversation and enjoys making people laugh',
+                value: 'Leads conversation and enjoys making people laugh'
             },
             {
-                optionText: 'Heading to the ocean',
-                value: 'ocean'
+                optionText: 'Always sees the best in their friends and mediates when there’s an argument.',
+                value: 'Always sees the best in their friends and mediates when there’s an argument.'
             }
         ]
     },
     {
         questionType: 'SelectionGroup',
         questionText:
-            ' Pick an option from 1 to 3. ',
-        questionId: 'radio',
-        questionSettings: {
-            allowDeselect: false,
-        },
+            ' Which goal is of the highest priority to you? ',
+        questionId: 'goalPriority',
         options: [
             {
-                optionText: ' Option 1',
-                value: 'option 1'
+                optionText: ' To be the best in my career.',
+                value: 'To be the best in my career.'
             },
             {
-                optionText: 'Option 2',
-                value: 'option 2'
+                optionText: 'To have a healthy body and mind.',
+                value: 'To have a healthy body and mind.'
             },
             {
-                optionText: 'Option 3',
-                value: 'option 3'
+                optionText: 'To have lots of money.',
+                value: 'To have lots of money.'
+            },
+            {
+                optionText: 'To travel the world. ',
+                value: 'To travel the world. '
             }
         ]
     },
     {
         questionType: 'SelectionGroup',
         questionText:
-            'Are you right-handed or left-handed? (Right is the default choice)',
+            'What is your biggest personality pet peeve?',
         questionId: 'singleDefault',
-        questionSettings: {
-            defaultSelection: 0
-        },
         options: [
             {
-                optionText: 'Right',
-                value: 'right'
+                optionText: 'People with no sense of humour.',
+                value: 'People with no sense of humour.'
             },
             {
-                optionText: 'Left',
-                value: 'left'
+                optionText: 'People who are judgmental. ',
+                value: 'People who are judgmental. '
+            },
+            {
+                optionText: 'People who are lazy.',
+                value: 'People who are lazy.'
+            },
+            {
+                optionText: 'People who are uptight.',
+                value: 'People who are uptight.'
+            },
+        ]
+    },  {
+        questionType: 'SelectionGroup',
+        questionText:
+            'How good are you at saying no to plans with your friends?',
+        questionId: 'sayingNo',
+        options: [
+            {
+                optionText: 'Great! I don’t do anything I don’t want to.',
+                value: 'Great! I don’t do anything I don’t want to.'
+            },
+            {
+                optionText: 'Awful. I can’t say no to people, especially my friends.',
+                value: 'Awful. I can’t say no to people, especially my friends.'
+            },
+            {
+                optionText: 'It depends on what situation and what friends, but generally it’s half and half.',
+                value: 'It depends on what situation and what friends, but generally it’s half and half.'
+            },
+            {
+                optionText: 'We had plans? I had no idea.',
+                value: 'We had plans? I had no idea.'
             },
         ]
     },
     {
-        questionType: 'MultipleSelectionGroup',
+        questionType: 'SelectionGroup',
         questionText:
-            'Do you wear shoes and socks? (Shoes and socks are the default choices) ',
-        questionId: 'multipleDefaults',
-        questionSettings: {
-            defaultSelection: [0, 2],
-            maxMultiSelect: 2,
-            minMultiSelect: 2,
-        },
+            'In a group discussion you want to say something but everyone is talking. What will you do? ',
+        questionId: 'everyoneTalks',
         options: [
             {
-                optionText: 'Shoes',
-                value: 'shoes'
+                optionText: 'Just butt in – how else am I going to say my piece?',
+                value: 'Just butt in – how else am I going to say my piece?'
             },
             {
-                optionText: 'No shoes',
-                value: 'no shoes'
+                optionText: 'Patiently wait until there’s a gap and pray I am fast enough to speak before someone else does.',
+                value: 'Patiently wait until there’s a gap and pray I am fast enough to speak before someone else does.'
             },
             {
-                optionText: 'Socks',
-                value: 'socks'
+                optionText: 'Get frustrated that there’s no order to the discussion and suggest we all take turns to talk. ',
+                value: 'Get frustrated that there’s no order to the discussion and suggest we all take turns to talk.'
             },
             {
-                optionText: 'No socks',
-                value: 'no socks'
+                optionText: 'Sit back and let everyone else talk. I don’t feel comfortable talking in big groups. ',
+                value: 'Sit back and let everyone else talk. I don’t feel comfortable talking in big groups. '
             },
         ]
     },
+    {
+        questionType: 'SelectionGroup',
+        questionText:
+        'Do you take the lead in many situation?',
+        questionId: 'takeLead',
+        options: [
+            {
+                optionText: 'Yes',
+                value: 'Yes'
+            },
+            {
+                optionText: 'No',
+                value: 'No'
+            },
+            {
+                optionText: ' Rarely',
+                value: 'Rarely'
+            },
+            {
+                optionText: 'Only when I need to.',
+                value: 'Only when I need to.'
+            },
+        ]
+    },
+    {
+        questionType: 'SelectionGroup',
+        questionText:
+        'Do you pack for a trip the same day you are leaving? ',
+        questionId: 'packTrip',
+        options: [
+            {
+                optionText: 'No',
+                value: 'No'
+            },
+            {
+                optionText: 'Yes',
+                value: 'Yes'
+            },
+            {
+                optionText: 'Most of the time',
+                value: 'Most of the time'
+            },
+            {
+                optionText: 'Only the last minute things.',
+                value: 'Only the last minute things.'
+            },
+        
+        ]
+    },
+    {
+        questionType: 'SelectionGroup',
+        questionText:
+        'Are you usually early when going to places?',
+        questionId: 'packTrip',
+        options: [
+            {
+                optionText: 'Always',
+                value: 'Always'
+            },
+            {
+                optionText: 'No',
+                value: 'No'
+            },
+            {
+                optionText: 'Sometimes',
+                value: 'Sometimes'
+            },
+            {
+                optionText: '"Usually"',
+                value: '"Usually"'
+            },
+        
+        ]
+    },
+
     {
         questionType: 'Info',
         questionText: 'That is all for the survey, tap finish to see your results!'
